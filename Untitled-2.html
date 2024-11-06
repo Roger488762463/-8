@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>哥布林大圖鑑 - 封面</title>
     <style>
-        body
-         html {
+        body, html {
             margin: 0;
             padding: 0;
             height: 100%;
@@ -60,49 +59,19 @@
             100% { opacity: 1; transform: scale(6); }
         }
 
-        /* 底部移動哥布林動畫樣式 */
+        /* 哥布林移動動畫樣式 */
         .moving-goblin {
             position: fixed;
-            bottom: 0px; /* 向下偏移，可以調整這個數值 */
-            width: 200px; /* 調整哥布林的寬度 */
-            height: auto; /* 使圖片維持比例 */
+            bottom: 20px;
+            width: 100px;
             animation: goblinMove 4s linear infinite alternate;
             transition: transform 0.5s; /* 添加平滑鏡像效果 */
-            z-index: 9998; /* 確保在最上層 */
         }
 
         /* 左右移動的動畫 */
         @keyframes goblinMove {
             0% { left: 0; }
-            100% { left: calc(100% - 150px); }
-        }
-
-        /* 左右搖擺哥布林圖片樣式 */
-        .side-goblin {
-            position: fixed;
-            width: 300px;
-            height: auto;
-            animation: sway 2s infinite ease-in-out; /* 搖擺動畫 */
-            z-index: 9999;
-        }
-
-        .left-goblin {
-            left: 100px;
-            top: 30%;
-            transform-origin: left center;
-            z-index: 9999;
-        }
-
-        .right-goblin {
-            right: 100px;
-            top: 50%;
-            transform-origin: right center;
-        }
-
-        /* 左右搖擺動畫 */
-        @keyframes sway {
-            0%, 100% { transform: rotate(-5deg); }
-            50% { transform: rotate(5deg); }
+            100% { left: calc(100% - 100px); }
         }
     </style>
 </head>
@@ -115,15 +84,11 @@
         </a>
     </div>
 
-    <!-- 底部移動哥布林 -->
-    <img src="跑跑歌.png" alt="哥布林" class="moving-goblin" id="goblin">
-
-    <!-- 左右兩側搖擺哥布林 -->
-    <img src="跑歌.PNG" alt="左側哥布林" class="side-goblin left-goblin">
-    <img src="2歌.PNG" alt="右側哥布林" class="side-goblin right-goblin">
+    <!-- 底部哥布林動畫 -->
+    <img src="小哥.png" alt="哥布林" class="moving-goblin" id="goblin">
 
     <script>
-        // 獲取底部移動哥布林元素
+        // 獲取哥布林元素
         const goblin = document.getElementById('goblin');
         let isFlipped = false;
 
